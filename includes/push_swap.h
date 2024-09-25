@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:43:36 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/23 15:48:09 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/09/25 18:30:49 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,12 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
+
+void		ft_sort(t_stack **stack_a);
+void		ft_free(t_stack **lst);
+void		ft_error(void);
+int			ft_check_sorted(t_stack *stack_a);
+int			ft_check_duplicates(t_stack *stack_a);
+t_stack		*ft_process_args(int ac, char **av)
 
 #endif

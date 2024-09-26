@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ope_a.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:25:55 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/26 21:02:27 by snakajim         ###   ########.fr       */
+/*   Created: 2024/09/26 21:10:32 by snakajim          #+#    #+#             */
+/*   Updated: 2024/09/26 21:34:37 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_sa(t_stack **a, int j)
 {
-	t_stack	*stack_a;
+	t_stack *tmp;
 
-	stack_a = ft_process(ac, av);
-	if (!stack_a || ft_check_duplicates(stack_a))
-	{
-		ft_free(&stack_a);
-		ft_error();
-	}
-	if (!ft_check_sorted(stack_a))
-		ft_sort(&stack_a);
-	ft_free(&stack_a);
-	return (0);
+	if (!*a || !((*a)->next))
+		return ;
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = (*a)->next;
+	(*a)->next = tmp;
+	if (j == 0)
+		write(1,"sa\n",3);
 }

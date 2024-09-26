@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 03:03:27 by snakajim          #+#    #+#             */
-/*   Updated: 2024/05/19 22:22:22 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/09/26 20:39:12 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static long	handle_overflow(const char *str, int sign);
 
 int	ft_space(char c)
 {
-	if ((c >= 9 && 13 >= c) || c == 32)
+	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r')
 		return (1);
 	return (0);
 }

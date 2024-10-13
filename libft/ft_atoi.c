@@ -6,11 +6,12 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 03:03:27 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/13 19:13:01 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/13 20:25:08 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../includes/push_swap.h"
 
 static long	handle_overflow(const char *str, int sign);
 
@@ -21,13 +22,14 @@ int	ft_space(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int				sign;
 	int				result;
 
 	sign = 1;
-	while (ft_space(*str))
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v'
+		|| *str == '\f' || *str == '\r')
 		str++;
 	while (*str == '-' || *str == '+')
 	{
@@ -51,9 +53,9 @@ static long	handle_overflow(const char *str, int sign)
 	{
 		digit = *str - '0';
 		if (sign == 1 && ret > ((cutoff - digit) / 10))
-			return (INT_MAX);
+			error_call();
 		if (sign == -1 && ret > ((cutoff + 1 - digit) / 10))
-			return (INT_MIN);
+			error_call();
 		ret = ret * 10 + digit;
 		str++;
 	}

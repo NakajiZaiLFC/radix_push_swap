@@ -26,5 +26,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
+void	error_call(void);
 
 #endif

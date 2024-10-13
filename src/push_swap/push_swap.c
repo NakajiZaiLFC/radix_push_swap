@@ -22,7 +22,8 @@ void	error_checker(char **argv)
 {
 	int i;
 	int j;
-	int test;
+	long test;
+	long ref;
 
 	i = 0;
 	if (argv[i] == NULL)
@@ -37,9 +38,11 @@ void	error_checker(char **argv)
 			j++;
 		}
 		test = ft_atoi(argv[i]);
-		printf("test: %d\n", test);
-		if (test == INT_MAX || test == INT_MIN)
-			error_call();
+		ref = atoi(argv[i]);
+		// printf("test: %ld\n", test);
+		// printf("ref: %ld\n", ref);
+		// if (test > 2147483647 || test < -2147483648)
+		// 	error_call();
 		i++;
 	}
 }

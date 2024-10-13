@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nassy <nassy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 03:03:27 by snakajim          #+#    #+#             */
-/*   Updated: 2024/07/07 01:22:54 by nassy            ###   ########.fr       */
+/*   Updated: 2024/10/13 17:18:48 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ int	ft_atoi(const char *str)
 
 static long	handle_overflow(const char *str, int sign)
 {
-	unsigned long	ret;
+	unsigned int	ret;
 	int				digit;
-	unsigned long	cutoff;
+	unsigned int	cutoff;
 
 	ret = 0;
-	cutoff = (unsigned long)LONG_MAX;
+	cutoff = (int)INT_MAX;
 	while (ft_isdigit(*str))
 	{
 		digit = *str - '0';
 		if (sign == 1 && ret > ((cutoff - digit) / 10))
-			return (LONG_MAX);
+			return (INT_MAX);
 		if (sign == -1 && ret > ((cutoff + 1 - digit) / 10))
-			return (LONG_MIN);
+			return (INT_MIN);
 		ret = ret * 10 + digit;
 		str++;
 	}

@@ -17,17 +17,14 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <math.h>
-
+# include "../libft/libft.h"
 
 typedef struct s_stack
 {
-	long			num;
-	long			index;
+	int				num;
+	int				index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
-
-char	**ft_split(char const *s, char c);
-int		ft_atoi(const char *str);
 
 #endif

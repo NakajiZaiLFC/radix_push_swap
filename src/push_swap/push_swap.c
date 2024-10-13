@@ -7,22 +7,23 @@ void	error_call(void)
 	exit(EXIT_FAILURE);
 }
 
-static char	*free_array(char **arr, size_t i)
-{
-	while (i > 0)
-	{
-		i--;
-		free(arr[i]);
-	}
-	free(arr);
-	return (NULL);
-}
+// static char	*free_array(char **arr, size_t i)
+// {
+// 	while (i > 0)
+// 	{
+// 		i--;
+// 		free(arr[i]);
+// 	}
+// 	free(arr);
+// 	return (NULL);
+// }
 
 void	error_checker(char **argv)
 {
 	int i;
 	int j;
 	int flg;
+	int test;
 
 	i = 0;
 	flg = 0;
@@ -37,13 +38,17 @@ void	error_checker(char **argv)
 				error_call();
 			j++;
 		}
+		test = ft_atoi(argv[i]);
+		if (test == INT_MAX || test == INT_MIN)
+			error_call();
+		printf("test: %d\n", test);
 		i++;
 	}
 }
 
 int main(int argc, char **argv)
 {
-	t_stack stack_a;
+	// t_stack stack_a;
 
 	if (argc == 1)
 		exit(EXIT_FAILURE);
@@ -58,8 +63,8 @@ int main(int argc, char **argv)
 	error_checker(argv);//check if the input is valid
 	printf("argc: %d\n", argc);
 	printf("argv[0]: %s\n", argv[0]);
-	// printf("argv[1]: %s\n", argv[1]);
-	// printf("argv[2]: %s\n", argv[2]);
+	printf("argv[1]: %s\n", argv[1]);
+	printf("argv[2]: %s\n", argv[2]);
 	// printf("argv[3]: %s\n", argv[3]);
 	// printf("argv[4]: %s\n", argv[4]);
 	// push_swap(stack_a, argv);

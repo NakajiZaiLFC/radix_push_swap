@@ -18,35 +18,6 @@ void	error_call(void)
 // 	return (NULL);
 // }
 
-void	error_checker(char **argv)
-{
-	int i;
-	int j;
-	long test;
-	long ref;
-
-	i = 0;
-	if (argv[i] == NULL)
-		error_call();
-	while (argv[i])
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			if (ft_isdigit(argv[i][j]) == 0 && argv[i][j] != '-' && argv[i][j] != '+')
-				error_call();
-			j++;
-		}
-		test = ft_atoi(argv[i]);
-		ref = atoi(argv[i]);
-		// printf("test: %ld\n", test);
-		// printf("ref: %ld\n", ref);
-		// if (test > 2147483647 || test < -2147483648)
-		// 	error_call();
-		i++;
-	}
-}
-
 int main(int argc, char **argv)
 {
 	// t_stack stack_a;
@@ -61,13 +32,9 @@ int main(int argc, char **argv)
 	}
 	else
 		argv++;
-	error_checker(argv);//check if the input is valid
-	printf("argc: %d\n", argc);
-	printf("argv[0]: %s\n", argv[0]);
-	printf("argv[1]: %s\n", argv[1]);
-	printf("argv[2]: %s\n", argv[2]);
-	// printf("argv[3]: %s\n", argv[3]);
-	// printf("argv[4]: %s\n", argv[4]);
+	init_stack(argv);
+	// error_checker(argv);//check if the input is valid
+
 	// push_swap(stack_a, argv);
 	// free_array(argv, 0);
 	return 0;

@@ -23,9 +23,12 @@ typedef struct s_stack
 {
 	int				num;
 	int				index;
+	int				len;
+	int				capa;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
 void	error_call(void);
+void	init_stack(char **argv);
 
 #endif

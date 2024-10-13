@@ -7,7 +7,8 @@ LIBFTDIR = libft/
 OBJ_DIR = obj/
 SRC_DIR = src/push_swap/
 
-SRC_1 = push_swap.c
+SRC_1 = push_swap.c \
+		init.c 
 
 # SRC_2 = ope_a.c \
 # 		ope_b.c \

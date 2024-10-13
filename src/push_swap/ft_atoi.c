@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nassy <nassy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 03:03:27 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/10 21:27:47 by nassy            ###   ########.fr       */
+/*   Updated: 2024/10/13 15:59:32 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ int	ft_atoi(const char *str)
 		str++;
 	result = (int)handle_overflow(str, sign);
 	return (sign * result);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
 
 static long	handle_overflow(const char *str, int sign)

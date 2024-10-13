@@ -18,6 +18,29 @@ static char	*free_array(char **arr, size_t i)
 	return (NULL);
 }
 
+void	error_checker(char **argv)
+{
+	int i;
+	int j;
+	int flg;
+
+	i = 0;
+	flg = 0;
+	if (argv[i] == NULL)
+		flg = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (ft_isdigit(argv[i][j]) == 0 && argv[i][j] != '-' && argv[i][j] != '+')
+				error_call();
+			j++;
+		}
+		i++;
+	}
+}
+
 int main(int argc, char **argv)
 {
 	t_stack stack_a;
@@ -27,12 +50,19 @@ int main(int argc, char **argv)
 	if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
-		if (argv)
+		if (!argv)
 			error_call();
 	}
 	else
 		argv++;
-	push_swap(stack_a,error_checker(argv));
-	free_array(argv, 0);
+	error_checker(argv);//check if the input is valid
+	printf("argc: %d\n", argc);
+	printf("argv[0]: %s\n", argv[0]);
+	// printf("argv[1]: %s\n", argv[1]);
+	// printf("argv[2]: %s\n", argv[2]);
+	// printf("argv[3]: %s\n", argv[3]);
+	// printf("argv[4]: %s\n", argv[4]);
+	// push_swap(stack_a, argv);
+	// free_array(argv, 0);
 	return 0;
 }

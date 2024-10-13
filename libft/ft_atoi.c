@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 03:03:27 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/13 17:18:48 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/13 19:13:01 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,15 @@ int	ft_atoi(const char *str)
 	int				sign;
 	int				result;
 
+	sign = 1;
 	while (ft_space(*str))
 		str++;
-	if (*str == '-')
-		sign = -1;
-	else
-		sign = 1;
-	if (*str == '-' || *str == '+')
+	while (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign *= -1;
 		str++;
+	}
 	result = (int)handle_overflow(str, sign);
 	return (sign * result);
 }

@@ -22,13 +22,11 @@ void	error_checker(char **argv)
 {
 	int i;
 	int j;
-	int flg;
 	int test;
 
 	i = 0;
-	flg = 0;
 	if (argv[i] == NULL)
-		flg = 1;
+		error_call();
 	while (argv[i])
 	{
 		j = 0;
@@ -39,9 +37,9 @@ void	error_checker(char **argv)
 			j++;
 		}
 		test = ft_atoi(argv[i]);
+		printf("test: %d\n", test);
 		if (test == INT_MAX || test == INT_MIN)
 			error_call();
-		printf("test: %d\n", test);
 		i++;
 	}
 }

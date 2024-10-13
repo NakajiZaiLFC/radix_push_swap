@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 {
 	// t_stack stack_a;
 
-	if (argc == 1)
+	if (argc == 1 || *argv[1] == '\0')
 		exit(EXIT_FAILURE);
 	if (argc == 2)
 	{
@@ -37,5 +37,12 @@ int main(int argc, char **argv)
 
 	// push_swap(stack_a, argv);
 	// free_array(argv, 0);
+	printf("argc: %d\n", argc);
+	printf("argv[0]: %s\n", argv[0]);
+	printf("argv[1]: %s\n", argv[1]);
+	printf("argv[2]: %s\n", argv[2]);
+	printf("argv[3]: %s\n", argv[3]);
+	printf("argv[4]: %s\n", argv[4]);
+
 	return 0;
 }

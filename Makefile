@@ -8,14 +8,14 @@ OBJ_DIR = obj/
 SRC_DIR = src/push_swap/
 
 SRC_1 = push_swap.c \
-		init.c 
 
-# SRC_2 = ope_a.c \
-# 		ope_b.c \
-# 		ope_r.c \
+SRC_2 = error_check.c \
+		init_stack.c \
+		make_stack.c \
+		coordinate_compre.c \
 
 OBJ_1 = $(addprefix $(OBJ_DIR), $(SRC_1:.c=.o))
-# OBJ_2 = $(addprefix $(OBJ_DIR), $(SRC_2:.c=.o))
+OBJ_2 = $(addprefix $(OBJ_DIR), $(SRC_2:.c=.o))
 
 INCLUDE = -L ./libft -lft
 

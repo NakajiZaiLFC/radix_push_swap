@@ -14,44 +14,28 @@ void	coordinate_compre(t_strhdr *stack)
 		tmp_array[i] = stack->data[i].elem;
 		i++;
 	}
-	quick_sort(tmp_array, 0, stack->len - 1);
+	bubble_sort(tmp_array, i);
 	coordinate(stack, tmp_array);
 	free(tmp_array);
 }
 
-void	quick_sort(int *array, int left, int right)
+void	bubble_sort(int *array ,int len)
 {
-	int pivot;
+	int i;
+	int j;
 
-	if (left < right)
+	i = 0;
+	while (i < len - 1)
 	{
-		pivot = partition(array, left, right);
-		quick_sort(array, left, pivot - 1);
-		quick_sort(array, pivot + 1, right);
+		j = 0;
+		while (j < len - 1 - i)
+		{
+			if (array[j] > array[j + 1])
+				ft_swap(&array[j], &array[j + 1]);
+			j++;
+		}
+		i++;
 	}
-}
-
-int	partition(int *array, int left, int right)
-{
-	int	i;
-	int	j;
-	int	piv;
-
-	i = left + 1;
-	j = right;
-	piv = left;
-	while (i <= j)
-	{
-		while (i <= right && array[i] < array[piv])
-			i++;
-		while (j > left && array[piv] < array[j])
-			j--;
-		if (i < j)
-			ft_swap(&array[i], &array[j]);
-	}
-	if (j > left)
-		ft_swap(&array[piv], &array[j]);
-	return (j);
 }
 
 void	ft_swap(int *a, int *b)

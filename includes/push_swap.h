@@ -45,8 +45,7 @@ int		check_sort(t_strhdr *stack, int len);
 void	init_info(t_strhdr *stack);
 
 void	coordinate_compre(t_strhdr *stack);
-void	quick_sort(int *array, int left, int right);
-int		partition(int *array, int left, int right);
+void	bubble_sort(int *array, int len);
 void	ft_swap(int *a, int *b);
 void	coordinate(t_strhdr *stack, int *temp_array);
 

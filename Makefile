@@ -13,6 +13,10 @@ SRC_2 = error_check.c \
 		init_stack.c \
 		make_stack.c \
 		coordinate_compre.c \
+		sort_small.c \
+		ope_a.c \
+		ope_b.c
+
 
 OBJ_1 = $(addprefix $(OBJ_DIR), $(SRC_1:.c=.o))
 OBJ_2 = $(addprefix $(OBJ_DIR), $(SRC_2:.c=.o))

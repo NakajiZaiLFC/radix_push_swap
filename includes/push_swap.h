@@ -52,6 +52,19 @@ void	coordinate(t_strhdr *stack, int *temp_array);
 void	isdigit_check(char **argv);
 void    duplication_check(char **argv);
 
-// void	push_swap(t_strhdr stack_a, t_strhdr stack_b);
+void	push_swap(t_strhdr stack_a, t_strhdr stack_b);
+void	sort_small(t_strhdr stack_a, t_strhdr stack_b);
+
+void	sort_three(t_strhdr stack_a);
+void	sort_four(t_strhdr stack_a, t_strhdr stack_b);
+void	sort_five(t_strhdr stack_a, t_strhdr stack_b);
+
+void	operate_sa(t_strhdr stack);
+void	operate_ra(t_strhdr stack);
+void	operate_rra(t_strhdr stack);
+void	operate_pa(t_strhdr *stack_a, t_strhdr *stack_b);
+
+void	operate_pb(t_strhdr *stack_a, t_strhdr *stack_b);
+void	operate_rb(t_strhdr stack);
 
 #endif

@@ -2,13 +2,13 @@
 #include "../../includes/push_swap.h"
 
 
-// void	push_swap(t_strhdr stack_a, t_strhdr stack_b)
-// {
-// 	if (stack_a.len < 6)
-// 		sort_small(stack_a, stack_b);
-// 	else
-// 		main_sort(&stack_a, &stack_b);
-// }
+void	push_swap(t_strhdr stack_a, t_strhdr stack_b)
+{
+	if (stack_a.len < 6)
+		sort_small(stack_a, stack_b);
+	// else
+	// 	main_sort(&stack_a, &stack_b);
+}
 
 int main(int argc, char **argv)
 {
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	init_strhdr(&stack_b, 0, stack_a.len);
 	init_info(&stack_b);
-	// push_swap(stack_a, stack_b);
+	push_swap(stack_a, stack_b);
 	// free_array(argv, 0);
 
 	// printf("argc: %d\n", argc);

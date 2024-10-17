@@ -8,10 +8,10 @@ void test_print(t_strhdr *stack)
 	printf("stack->data[1].index: %d\n", stack->data[1].index);
 	printf("stack->data[2].elem: %d\n", stack->data[2].elem);
 	printf("stack->data[2].index: %d\n", stack->data[2].index);
-	printf("stack->data[3].elem: %d\n", stack->data[3].elem);
-	printf("stack->data[3].index: %d\n", stack->data[3].index);
-	printf("stack->data[4].elem: %d\n", stack->data[4].elem);
-	printf("stack->data[4].index: %d\n", stack->data[4].index);
+	// printf("stack->data[3].elem: %d\n", stack->data[3].elem);
+	// printf("stack->data[3].index: %d\n", stack->data[3].index);
+	// printf("stack->data[4].elem: %d\n", stack->data[4].elem);
+	// printf("stack->data[4].index: %d\n", stack->data[4].index);
 
 	printf("stack->len: %d\n", stack->len);
 	printf("stack->cap: %d\n", stack->cap);

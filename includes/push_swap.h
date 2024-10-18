@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/18 09:08:51 by snakajim          #+#    #+#             */
+/*   Updated: 2024/10/18 09:08:54 by snakajim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -54,7 +65,8 @@ void    duplication_check(char **argv);
 
 void	push_swap(t_strhdr stack_a, t_strhdr stack_b);
 void	sort_small(t_strhdr stack_a, t_strhdr stack_b);
-
+void	radix_sort(t_strhdr *stack_a, t_strhdr *stack_b);
+int		get_max_bit(t_strhdr stack);
 void	sort_three(t_strhdr stack_a);
 void	sort_four(t_strhdr stack_a, t_strhdr stack_b);
 void	sort_five(t_strhdr stack_a, t_strhdr stack_b);
@@ -66,5 +78,5 @@ void	operate_pa(t_strhdr *stack_a, t_strhdr *stack_b);
 
 void	operate_pb(t_strhdr *stack_a, t_strhdr *stack_b);
 void	operate_rb(t_strhdr stack);
-
+void	free_array(char **list, t_strhdr *stack_a, t_strhdr *stack_b);
 #endif

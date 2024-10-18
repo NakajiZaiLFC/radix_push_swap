@@ -15,7 +15,9 @@ SRC_2 = error_check.c \
 		coordinate_compre.c \
 		sort_small.c \
 		ope_a.c \
-		ope_b.c
+		ope_b.c \
+		main_sort.c \
+		free_array.c 
 
 
 OBJ_1 = $(addprefix $(OBJ_DIR), $(SRC_1:.c=.o))
@@ -35,7 +37,6 @@ all: ${NAME} ${BONUS}
 
 clean:
 	${RM} ${OBJ_DIR}
-	${RM} ${NAME}
 	@cd $(LIBFTDIR) && $(MAKE) clean
 
 fclean: clean

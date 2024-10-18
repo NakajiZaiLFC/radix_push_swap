@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stack.c                                       :+:      :+:    :+:   */
+/*   free_array.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 09:06:44 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/18 09:06:53 by snakajim         ###   ########.fr       */
+/*   Created: 2024/10/18 09:06:58 by snakajim          #+#    #+#             */
+/*   Updated: 2024/10/18 09:07:05 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	init_stack(t_strhdr *stack, char **argv)
+void	free_array(char **list, t_strhdr *stack_a, t_strhdr *stack_b)
 {
-	error_check(argv);
-	init_strhdr(stack, count_elem(argv), count_elem(argv));
-	make_stack(stack, argv);
-	coordinate_compre(stack);
-}
-int count_elem(char **str)
-{
-	size_t i;
+	int i;
 
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-void init_strhdr(t_strhdr *stack, int len, int cap)
-{
-	stack->len = len;
-	stack->cap = cap;
+	if (list)
+	{
+		while (list[i] != NULL)
+		{
+			free(list[i]);
+			i++;
+		}
+		free(list);
+	}
+	free(stack_a->data);
+	free(stack_b->data);
 }

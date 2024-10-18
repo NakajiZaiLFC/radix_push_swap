@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_check.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/18 09:07:17 by snakajim          #+#    #+#             */
+/*   Updated: 2024/10/18 09:07:18 by snakajim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 void	error_check(char **argv)
@@ -46,7 +58,6 @@ void	duplication_check(char **argv)
 		i++;
 	}
 }
-
 
 void	error_call(void)
 {

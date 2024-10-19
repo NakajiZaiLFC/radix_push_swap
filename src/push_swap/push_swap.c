@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:08:01 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/19 18:22:34 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 22:35:41 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	t_strhdr	stack_b;
 	char		**list;
 
-	list = NULL;
+	list = argv;
 	if (argc == 1 || *argv[1] == '\0')
 		exit(EXIT_FAILURE);
 	if (argc == 2)
@@ -34,11 +34,10 @@ int	main(int argc, char **argv)
 		list = ft_split(argv[1], ' ');
 		if (!list)
 			error_call();
-		argv = list;
 	}
 	else
-		argv++;
-	init_stack(&stack_a, argv);
+		list++;
+	init_stack(&stack_a, list);
 	stack_b.data = (t_info *)malloc(sizeof(t_info) * stack_a.len);
 	if (!stack_b.data)
 		exit(EXIT_FAILURE);

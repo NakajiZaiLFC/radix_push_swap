@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:06:32 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/19 17:26:10 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 22:34:27 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	make_stack(t_strhdr *stack, char **argv)
 	}
 	if (check_sort(stack, stack->len))
 	{
+		i = 0;
+		while (argv[i])
+			free(argv[i++]);
+		free(argv);
 		free(stack->data);
 		exit(EXIT_FAILURE);
 	}

@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:06:58 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/19 18:30:41 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 22:26:15 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,12 @@ void	free_array(char **list, t_strhdr *stack_a, t_strhdr *stack_b)
 	int	i;
 
 	i = 0;
-	if (list)
+	while (list[i])
 	{
-		while (list[i] != NULL)
-		{
-			free(list[i]);
-			i++;
-		}
-		free(list);
+		free(list[i]);
+		i++;
 	}
+	free(list);
 	free(stack_a->data);
 	free(stack_b->data);
 }

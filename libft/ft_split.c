@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 01:24:35 by snakajim          #+#    #+#             */
-/*   Updated: 2024/05/18 06:54:11 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 22:12:52 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static char	*free_array(char **arr, size_t i)
 {
 	while (i > 0)
 	{
-		i--;
 		free(arr[i]);
+		i--;
 	}
 	free(arr);
 	return (NULL);

@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:07:21 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/18 09:07:26 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:34:48 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	coordinate_compre(t_strhdr *stack)
 {
-	int *tmp_array;
-	int i;
+	int	*tmp_array;
+	int	i;
 
 	i = 0;
 	tmp_array = (int *)malloc(sizeof(int) * stack->len);
@@ -31,10 +31,10 @@ void	coordinate_compre(t_strhdr *stack)
 	free(tmp_array);
 }
 
-void	bubble_sort(int *array ,int len)
+void	bubble_sort(int *array, int len)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < len - 1)
@@ -52,7 +52,7 @@ void	bubble_sort(int *array ,int len)
 
 void	ft_swap(int *a, int *b)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = *a;
 	*a = *b;

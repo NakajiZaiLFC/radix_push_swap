@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:06:26 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/18 09:07:47 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:26:42 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	operate_sa(t_strhdr stack)
 {
-	t_info tmp;
+	t_info	tmp;
 
 	tmp = stack.data[0];
 	stack.data[0] = stack.data[1];
@@ -24,8 +24,8 @@ void	operate_sa(t_strhdr stack)
 
 void	operate_ra(t_strhdr stack)
 {
-	t_info tmp;
-	int i;
+	t_info	tmp;
+	int		i;
 
 	i = 0;
 	tmp = stack.data[0];
@@ -40,8 +40,8 @@ void	operate_ra(t_strhdr stack)
 
 void	operate_rra(t_strhdr stack)
 {
-	t_info tmp;
-	int i;
+	t_info	tmp;
+	int		i;
 
 	i = stack.len - 1;
 	tmp = stack.data[i];
@@ -56,8 +56,8 @@ void	operate_rra(t_strhdr stack)
 
 void	operate_pa(t_strhdr *stack_a, t_strhdr *stack_b)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
 	len = stack_a->len;

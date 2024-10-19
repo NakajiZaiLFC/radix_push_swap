@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:08:01 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/18 09:08:05 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 18:22:34 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	push_swap(t_strhdr stack_a, t_strhdr stack_b)
 		radix_sort(&stack_a, &stack_b);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_strhdr	stack_a;
 	t_strhdr	stack_b;

@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:06:44 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/18 09:06:53 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:34:18 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ void	init_stack(t_strhdr *stack, char **argv)
 	make_stack(stack, argv);
 	coordinate_compre(stack);
 }
-int count_elem(char **str)
+
+int	count_elem(char **str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -29,7 +30,7 @@ int count_elem(char **str)
 	return (i);
 }
 
-void init_strhdr(t_strhdr *stack, int len, int cap)
+void	init_strhdr(t_strhdr *stack, int len, int cap)
 {
 	stack->len = len;
 	stack->cap = cap;

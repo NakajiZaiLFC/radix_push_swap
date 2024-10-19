@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:07:17 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/18 09:07:18 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:30:25 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	error_check(char **argv)
 
 void	isdigit_check(char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	if (argv[i] == NULL)
@@ -31,7 +31,8 @@ void	isdigit_check(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (ft_isdigit(argv[i][j]) == 0 && argv[i][j] != '-' && argv[i][j] != '+')
+			if (ft_isdigit(argv[i][j]) == 0 && \
+			argv[i][j] != '-' && argv[i][j] != '+')
 				error_call();
 			j++;
 		}
@@ -42,8 +43,8 @@ void	isdigit_check(char **argv)
 
 void	duplication_check(char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (argv[i])

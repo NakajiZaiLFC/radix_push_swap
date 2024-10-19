@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:05:49 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/18 09:05:53 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 18:37:17 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	get_max_bit(t_strhdr stack)
 {
-	int i;
-	int max_bit;
-	int max;
+	int	i;
+	int	max_bit;
+	int	max;
 
 	i = 0;
 	max = stack.data[0].index;
@@ -32,18 +32,34 @@ int	get_max_bit(t_strhdr stack)
 	return (max_bit);
 }
 
+int	is_sorted(t_strhdr *stack)
+{
+	int	i;
+
+	i = 0;
+	while (i < stack->len - 1)
+	{
+		if (stack->data[i].index > stack->data[i + 1].index)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 void	radix_sort(t_strhdr *stack_a, t_strhdr *stack_b)
 {
-	int i;
-	int j;
-	int max_bit;
-	int size;
+	int	i;
+	int	j;
+	int	max_bit;
+	int	size;
 
 	i = 0;
 	max_bit = get_max_bit(*stack_a);
 	size = stack_a->len;
 	while (i < max_bit)
 	{
+		if (is_sorted(stack_a))
+			break ;
 		j = 0;
 		while (j++ < size)
 		{

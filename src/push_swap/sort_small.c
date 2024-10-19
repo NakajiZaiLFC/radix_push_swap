@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:06:09 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/18 09:06:14 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:33:46 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,27 @@ void	sort_small(t_strhdr stack_a, t_strhdr stack_b)
 
 void	sort_three(t_strhdr stack_a)
 {
-	if ((stack_a.data[0].elem < stack_a.data[2].elem) && (stack_a.data[2].elem < stack_a.data[1].elem))
-		{
-			operate_sa(stack_a);
-			operate_ra(stack_a);
-		}
-	else if ((stack_a.data[1].elem < stack_a.data[0].elem) && (stack_a.data[0].elem < stack_a.data[2].elem))
+	if ((stack_a.data[0].elem < stack_a.data[2].elem) \
+		&& (stack_a.data[2].elem < stack_a.data[1].elem))
+	{
 		operate_sa(stack_a);
-	else if ((stack_a.data[2].elem < stack_a.data[0].elem) && (stack_a.data[0].elem < stack_a.data[1].elem))
-		operate_rra(stack_a);
-	else if ((stack_a.data[1].elem < stack_a.data[2].elem) && (stack_a.data[2].elem < stack_a.data[0].elem))
 		operate_ra(stack_a);
-	else if ((stack_a.data[2].elem < stack_a.data[1].elem) && (stack_a.data[1].elem < stack_a.data[0].elem))
-		{
-			operate_sa(stack_a);
-			operate_rra(stack_a);
-		}
+	}
+	else if ((stack_a.data[1].elem < stack_a.data[0].elem) \
+		&& (stack_a.data[0].elem < stack_a.data[2].elem))
+		operate_sa(stack_a);
+	else if ((stack_a.data[2].elem < stack_a.data[0].elem) \
+		&& (stack_a.data[0].elem < stack_a.data[1].elem))
+		operate_rra(stack_a);
+	else if ((stack_a.data[1].elem < stack_a.data[2].elem) \
+		&& (stack_a.data[2].elem < stack_a.data[0].elem))
+		operate_ra(stack_a);
+	else if ((stack_a.data[2].elem < stack_a.data[1].elem) \
+		&& (stack_a.data[1].elem < stack_a.data[0].elem))
+	{
+		operate_sa(stack_a);
+		operate_rra(stack_a);
+	}
 }
 
 void	sort_four(t_strhdr stack_a, t_strhdr stack_b)
@@ -59,7 +64,7 @@ void	sort_four(t_strhdr stack_a, t_strhdr stack_b)
 
 void	sort_five(t_strhdr stack_a, t_strhdr stack_b)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 2)

@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:06:32 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/18 09:07:42 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:26:10 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	make_stack(t_strhdr *stack, char **argv)
 {
-	int tmp;
-	int i;
+	int	tmp;
+	int	i;
 
 	i = 0;
 	stack->data = (t_info *)malloc(sizeof(t_info) * stack->len);
@@ -37,7 +37,7 @@ void	make_stack(t_strhdr *stack, char **argv)
 
 int	check_sort(t_strhdr *stack, int len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (len == 0)
@@ -53,7 +53,7 @@ int	check_sort(t_strhdr *stack, int len)
 
 void	init_info(t_strhdr *stack)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < stack->len)

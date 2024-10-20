@@ -6,12 +6,12 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 03:03:27 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/13 20:25:08 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/21 07:24:25 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "../includes/push_swap.h"
+#include "libft.h"
 
 static long	handle_overflow(const char *str, int sign);
 
@@ -24,8 +24,8 @@ int	ft_space(char c)
 
 long	ft_atoi(const char *str)
 {
-	int				sign;
-	int				result;
+	int		sign;
+	long	result;
 
 	sign = 1;
 	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v'
@@ -37,25 +37,25 @@ long	ft_atoi(const char *str)
 			sign *= -1;
 		str++;
 	}
-	result = (int)handle_overflow(str, sign);
+	result = handle_overflow(str, sign);
 	return (sign * result);
 }
 
 static long	handle_overflow(const char *str, int sign)
 {
-	unsigned int	ret;
+	unsigned long	ret;
 	int				digit;
-	unsigned int	cutoff;
+	unsigned long	cutoff;
 
 	ret = 0;
-	cutoff = (int)INT_MAX;
+	cutoff = (unsigned long)LONG_MAX;
 	while (ft_isdigit(*str))
 	{
 		digit = *str - '0';
 		if (sign == 1 && ret > ((cutoff - digit) / 10))
-			error_call();
+			return (LONG_MAX);
 		if (sign == -1 && ret > ((cutoff + 1 - digit) / 10))
-			error_call();
+			return (LONG_MIN);
 		ret = ret * 10 + digit;
 		str++;
 	}

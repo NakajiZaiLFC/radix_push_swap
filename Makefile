@@ -1,7 +1,7 @@
 NAME = push_swap
 CC = cc
 RM = rm -rf
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 LDFLAGS = -L./libft -lft
 LIBFTDIR = libft/
 OBJ_DIR = obj/

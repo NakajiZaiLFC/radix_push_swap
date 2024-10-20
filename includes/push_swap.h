@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:08:51 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/20 20:09:03 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/20 20:32:38 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,7 @@ typedef struct s_info
 {
 	int		elem;
 	int		index;
-	t_info	*next;
 }			t_info;
-
-typedef struct s_stack
-{
-	int		len;
-	t_stack	*next;
-}			t_stack;
 
 typedef struct s_strhdr
 {

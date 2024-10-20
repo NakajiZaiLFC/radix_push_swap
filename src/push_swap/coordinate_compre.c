@@ -6,13 +6,13 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:07:21 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/19 17:34:48 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/20 19:05:36 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	coordinate_compre(t_strhdr *stack)
+void	coordinate_compre(t_strhdr *stack, char **argv)
 {
 	int	*tmp_array;
 	int	i;
@@ -20,7 +20,7 @@ void	coordinate_compre(t_strhdr *stack)
 	i = 0;
 	tmp_array = (int *)malloc(sizeof(int) * stack->len);
 	if (!tmp_array)
-		exit(EXIT_FAILURE);
+		free_array_invalid(argv, stack);
 	while (i < stack->len)
 	{
 		tmp_array[i] = stack->data[i].elem;

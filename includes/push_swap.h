@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:08:51 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/20 16:50:19 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/20 20:09:03 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,14 @@ typedef struct s_info
 {
 	int		elem;
 	int		index;
+	t_info	*next;
 }			t_info;
+
+typedef struct s_stack
+{
+	int		len;
+	t_stack	*next;
+}			t_stack;
 
 typedef struct s_strhdr
 {
@@ -46,19 +53,19 @@ typedef struct s_strhdr
 	int		argc;
 }			t_strhdr;
 void	error_call(void);
-void	error_check(char **argv);
+void	error_check(char **argv, t_strhdr *stack);
 int		count_elem(char **str);
 void	init_strhdr(t_strhdr *stack, int len, int cap);
 void	init_stack(t_strhdr *stack, char **argv);
 void	make_stack(t_strhdr *stack, char **argv);
 int		check_sort(t_strhdr *stack, int len);
 void	init_info(t_strhdr *stack);
-void	coordinate_compre(t_strhdr *stack);
+void	coordinate_compre(t_strhdr *stack, char **argv);
 void	bubble_sort(int *array, int len);
 void	ft_swap(int *a, int *b);
 void	coordinate(t_strhdr *stack, int *temp_array);
-void	isdigit_check(char **argv);
-void	duplication_check(char **argv);
+void	isdigit_check(char **argv, t_strhdr *stack);
+void	duplication_check(char **argv, t_strhdr *stack);
 void	push_swap(t_strhdr stack_a, t_strhdr stack_b);
 void	sort_small(t_strhdr stack_a, t_strhdr stack_b);
 void	radix_sort(t_strhdr *stack_a, t_strhdr *stack_b);
@@ -72,6 +79,9 @@ void	operate_rra(t_strhdr stack);
 void	operate_pa(t_strhdr *stack_a, t_strhdr *stack_b);
 void	operate_pb(t_strhdr *stack_a, t_strhdr *stack_b);
 void	operate_rb(t_strhdr stack);
-void	free_array(char **list, t_strhdr *stack_a, t_strhdr *stack_b);
+void	free_array(char **list, t_strhdr *stack_a, t_strhdr *stack_b, int flg);
 void	free_array_sorted(char **list, t_strhdr *stack);
+void	free_array_invalid(char **list, t_strhdr *stack);
+void	overflow_check(char **argv, t_strhdr *stack);
+int		ft_strcmp(char *s1, char *s2);
 #endif

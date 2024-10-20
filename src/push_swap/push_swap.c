@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:08:01 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/20 16:36:01 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/20 19:00:16 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int	main(int argc, char **argv)
 	init_stack(&stack_a, list);
 	stack_b.data = (t_info *)malloc(sizeof(t_info) * stack_a.len);
 	if (!stack_b.data)
-		exit(EXIT_FAILURE);
+		free_array(list, &stack_a, &stack_b, 1);
 	init_strhdr(&stack_b, 0, stack_a.len);
 	init_info(&stack_b);
 	push_swap(stack_a, stack_b);
-	free_array(list, &stack_a, &stack_b);
+	free_array(list, &stack_a, &stack_b, 0);
 	return (0);
 }

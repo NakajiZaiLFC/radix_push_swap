@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:06:32 by snakajim          #+#    #+#             */
-/*   Updated: 2024/10/20 16:50:19 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/20 19:12:50 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	make_stack(t_strhdr *stack, char **argv)
 	i = 0;
 	stack->data = (t_info *)malloc(sizeof(t_info) * stack->len);
 	if (!stack->data)
-		exit(EXIT_FAILURE);
+		free_array_invalid(argv, stack);
 	init_info(stack);
 	while (i < stack->len)
 	{

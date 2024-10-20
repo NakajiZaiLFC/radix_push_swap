@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_new.c                                     :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nassy <nassy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 20:42:06 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/26 20:44:30 by snakajim         ###   ########.fr       */
+/*   Created: 2024/07/07 03:04:32 by nassy             #+#    #+#             */
+/*   Updated: 2024/07/07 03:05:57 by nassy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-t_stack *ft_stack_new(int content)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_stack *new;
-	new = (t_stack *)malloc(sizeof(t_stack));
-	if (!new)
-		ft_error();
-	new->num = content;
-	new->next = NULL;
-	return (new);
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

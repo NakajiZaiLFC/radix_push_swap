@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ope_b.c                                            :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nassy <nassy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 21:34:41 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/26 21:37:48 by snakajim         ###   ########.fr       */
+/*   Created: 2024/07/07 03:06:21 by nassy             #+#    #+#             */
+/*   Updated: 2024/07/07 03:06:30 by nassy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-void	ft_pb(t_stack **stack_a, t_stack **stack_b, int j)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_stack *tmp;
+	t_list	*last;
 
-	if (!*stack_a)
+	if (alst == NULL || new == NULL)
 		return ;
-	tmp = stack_b;
-	*stack_b = *stack_a;
-	*stack_a = (*stack_a)->next;
-	(*stack_b)->next = tmp;
-	if (j == 0)
-		write(1,"pb\n",3);
+	if (*alst == NULL)
+	{
+		*alst = new;
+		return ;
+	}
+	last = ft_lstlast(*alst);
+	last->next = new;
 }

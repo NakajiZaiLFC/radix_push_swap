@@ -6,11 +6,14 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 04:21:37 by snakajim          #+#    #+#             */
-/*   Updated: 2024/05/19 22:23:11 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/05/18 00:22:51 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// #include <stdio.h>
+// #include <string.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

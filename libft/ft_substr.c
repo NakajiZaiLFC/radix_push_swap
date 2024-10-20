@@ -6,11 +6,12 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 20:28:07 by snakajim          #+#    #+#             */
-/*   Updated: 2024/05/19 22:30:37 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/05/11 17:58:16 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

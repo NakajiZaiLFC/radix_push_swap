@@ -6,7 +6,7 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 01:31:36 by snakajim          #+#    #+#             */
-/*   Updated: 2024/05/19 22:34:46 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/05/08 01:45:01 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	index;
-	size_t	len;
-	char	*ret;
+	unsigned int	index;
+	unsigned int	len;
+	char			*ret;
 
 	if (s == NULL)
 		return (NULL);

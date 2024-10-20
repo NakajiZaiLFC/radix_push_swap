@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ope_a.c                                            :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nassy <nassy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 21:10:32 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/26 21:34:37 by snakajim         ###   ########.fr       */
+/*   Created: 2024/07/07 02:37:44 by nassy             #+#    #+#             */
+/*   Updated: 2024/07/07 02:38:26 by nassy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-void	ft_sa(t_stack **a, int j)
+int	ft_lstsize(t_list *lst)
 {
-	t_stack *tmp;
+	int		count;
 
-	if (!*a || !((*a)->next))
-		return ;
-	tmp = *a;
-	*a = (*a)->next;
-	tmp->next = (*a)->next;
-	(*a)->next = tmp;
-	if (j == 0)
-		write(1,"sa\n",3);
+	count = 0;
+	while (lst != NULL)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }

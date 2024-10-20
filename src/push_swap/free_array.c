@@ -1,29 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   free_array.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:25:55 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/26 21:02:27 by snakajim         ###   ########.fr       */
+/*   Created: 2024/10/18 09:06:58 by snakajim          #+#    #+#             */
+/*   Updated: 2024/10/20 16:52:02 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	free_array(char **list, t_strhdr *stack_a, t_strhdr *stack_b)
 {
-	t_stack	*stack_a;
+	int	i;
 
-	stack_a = ft_process(ac, av);
-	if (!stack_a || ft_check_duplicates(stack_a))
+	i = 0;
+	if (stack_a->argc == 2)
 	{
-		ft_free(&stack_a);
-		ft_error();
+		while (list[i])
+		{
+			free(list[i]);
+			i++;
+		}
+		free(list);
 	}
-	if (!ft_check_sorted(stack_a))
-		ft_sort(&stack_a);
-	ft_free(&stack_a);
-	return (0);
+	free(stack_a->data);
+	free(stack_b->data);
+}
+
+void	free_array_sorted(char **list, t_strhdr *stack)
+{
+	int	i;
+
+	i = 0;
+	if (stack->argc == 2)
+	{
+		while (list[i])
+		{
+			free(list[i]);
+			i++;
+		}
+		free(list);
+	}
+	free(stack->data);
 }

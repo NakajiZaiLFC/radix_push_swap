@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nassy <nassy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 01:25:49 by snakajim          #+#    #+#             */
-/*   Updated: 2024/05/19 22:26:52 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/07/07 02:02:08 by nassy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ static char	*if_int_minmax(void)
 	char	*str;
 
 	str = (char *)malloc(sizeof(char) * 12);
-	if (str == NULL)
-		return (NULL);
 	ft_memcpy(str, "-2147483648\0", 12);
 	return (str);
 }

@@ -6,11 +6,12 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 11:38:30 by snakajim          #+#    #+#             */
-/*   Updated: 2024/05/19 22:22:47 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/05/11 03:00:46 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strdup(const char *src)
 {

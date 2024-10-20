@@ -6,11 +6,12 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 01:04:58 by snakajim          #+#    #+#             */
-/*   Updated: 2024/05/19 22:22:55 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/05/17 23:00:52 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {

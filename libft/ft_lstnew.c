@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solve_utils_ab.c                                   :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nassy <nassy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 22:01:49 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/26 22:22:02 by snakajim         ###   ########.fr       */
+/*   Created: 2024/07/07 01:27:06 by nassy             #+#    #+#             */
+/*   Updated: 2024/07/07 02:21:36 by nassy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-int	ft_case_rarb(t_stack *a, t_stack *b, int c)
+t_list	*ft_lstnew(void *content)
 {
-	int i;
+	t_list	*list;
 
-	i = ft_find_place_b(b, c);
-	if (i < ft_find_index(a, c))
-		i = ft_find_index(a, c);
-	return (i);
+	list = (t_list *)malloc(sizeof(t_list));
+	if (list == NULL)
+		return (NULL);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }

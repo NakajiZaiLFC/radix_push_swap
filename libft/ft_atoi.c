@@ -6,55 +6,56 @@
 /*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 03:03:27 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/26 20:39:12 by snakajim         ###   ########.fr       */
+/*   Updated: 2024/10/13 20:25:08 by snakajim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../includes/push_swap.h"
 
 static long	handle_overflow(const char *str, int sign);
 
 int	ft_space(char c)
 {
-	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r')
+	if ((c >= 9 && 13 >= c) || c == 32)
 		return (1);
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int				sign;
-	unsigned int	n;
 	int				result;
 
-	while (ft_space(*str))
+	sign = 1;
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v'
+		|| *str == '\f' || *str == '\r')
 		str++;
-	if (*str == '-')
-		sign = -1;
-	else
-		sign = 1;
-	if (*str == '-' || *str == '+')
+	while (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign *= -1;
 		str++;
-	n = 0;
+	}
 	result = (int)handle_overflow(str, sign);
 	return (sign * result);
 }
 
 static long	handle_overflow(const char *str, int sign)
 {
-	unsigned long	ret;
+	unsigned int	ret;
 	int				digit;
-	unsigned long	cutoff;
+	unsigned int	cutoff;
 
 	ret = 0;
-	cutoff = (unsigned long)LONG_MAX;
+	cutoff = (int)INT_MAX;
 	while (ft_isdigit(*str))
 	{
 		digit = *str - '0';
 		if (sign == 1 && ret > ((cutoff - digit) / 10))
-			return (LONG_MAX);
+			error_call();
 		if (sign == -1 && ret > ((cutoff + 1 - digit) / 10))
-			return (LONG_MIN);
+			error_call();
 		ret = ret * 10 + digit;
 		str++;
 	}

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_back.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nassy <nassy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 20:45:48 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/26 20:56:30 by snakajim         ###   ########.fr       */
+/*   Created: 2024/07/07 03:10:25 by nassy             #+#    #+#             */
+/*   Updated: 2024/07/07 03:10:28 by nassy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-void	ft_add_back(t_stack **stack, t_stack *stack_new)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!stack)
+	if (lst == NULL)
 		return ;
-	if (!*stack)
-		*stack = stack_new;
-	else
-		(ft_lstlast (*stack))->next = stack_new;
+	del(lst->content);
+	free(lst);
 }

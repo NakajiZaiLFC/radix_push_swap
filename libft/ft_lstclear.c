@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nassy <nassy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:40:52 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/23 15:44:20 by snakajim         ###   ########.fr       */
+/*   Created: 2024/07/07 03:16:19 by nassy             #+#    #+#             */
+/*   Updated: 2024/07/07 03:16:27 by nassy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-void	ft_free(t_stack **lst)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_stack	*tmp;
+	t_list	*tmp;
 
-	if (!lst)
+	if (lst == NULL || del == NULL)
 		return ;
-	while (*lst)
+	while (*lst != NULL)
 	{
 		tmp = (*lst)->next;
-		(*lst)->num = 0;
-		free(*lst);
+		ft_lstdelone(*lst, del);
 		*lst = tmp;
 	}
 }

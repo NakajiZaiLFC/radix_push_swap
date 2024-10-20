@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_sorted.c                                  :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nassy <nassy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:49:14 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/23 15:53:07 by snakajim         ###   ########.fr       */
+/*   Created: 2024/07/07 03:17:45 by nassy             #+#    #+#             */
+/*   Updated: 2024/07/07 03:17:55 by nassy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-int	ft_check_sorted(t_stack *stack_a)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int		i;
-
-	i = stack_a->num;
-	while (stack_a)
+	if (lst == NULL || f == NULL)
+		return ;
+	while (lst != NULL)
 	{
-		if (i > stack_a->num)
-			return (FALSE);
-		i = stack_a->num;
-		stack_a = stack_a->next;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (TRUE);
 }

@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_args_quoted.c                             :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: snakajim <snakajim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nassy <nassy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 20:58:24 by snakajim          #+#    #+#             */
-/*   Updated: 2024/09/26 21:00:50 by snakajim         ###   ########.fr       */
+/*   Created: 2024/07/07 02:29:39 by nassy             #+#    #+#             */
+/*   Updated: 2024/07/07 02:37:11 by nassy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "libft.h"
 
-void	ft_freestr(char **lst)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	char	*n1;
-
-	if (!lst)
+	if (alst == NULL || new == NULL)
 		return ;
-	while (*lst)
-	{
-		n1 = *lst;
-		lst++;
-		free(n1);
-	}
-	*lst = NULL;
+	new->next = *alst;
+	*alst = new;
 }

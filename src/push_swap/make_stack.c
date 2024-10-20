@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void	make_stack(t_strhdr *stack, char **argv)
+void	make_stack(t_strhdr *stack, char **argv, int argc)
 {
 	int	tmp;
 	int	i;
@@ -30,11 +30,7 @@ void	make_stack(t_strhdr *stack, char **argv)
 	}
 	if (check_sort(stack, stack->len))
 	{
-		i = 0;
-		while (argv[i])
-			free(argv[i++]);
-		free(argv);
-		free(stack->data);
+		free_array(stack, argv, argc);
 		exit(EXIT_FAILURE);
 	}
 }
